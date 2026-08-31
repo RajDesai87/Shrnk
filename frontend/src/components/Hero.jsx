@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
+import { useAuth } from '../context/AuthContext';
 
-export function Hero({ onOpenAuth, inputRef }) {
+export function Hero({ onOpenAuth, onNavigateDashboard, inputRef }) {
+  const { isAuthenticated } = useAuth();
   const [inputUrl, setInputUrl] = useState('');
 
   const handleShorten = (e) => {
     e.preventDefault();
-    if (onOpenAuth) {
-      onOpenAuth('signup', inputUrl.trim());
+    const trimmed = inputUrl.trim();
+    if (isAuthenticated) {
+      if (onNavigateDashboard) {
+        onNavigateDashboard('overview', trimmed);
+      }
+    } else {
+      if (onOpenAuth) {
+        onOpenAuth('signup', trimmed);
+      }
     }
   };
 

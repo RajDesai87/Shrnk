@@ -1,38 +1,39 @@
 import React, { useState } from 'react';
+import { getShortUrlDisplay, getFullShortUrl, DOMAIN_NAME } from '../config';
 
 const constantLinks = [
   {
     id: '1',
-    original: 'github.com/raj/project',
-    short: 'shrnk.in/a7Kx92',
+    original: 'github.com/johndoe/project',
+    code: 'a7Kx92',
     clicks: '1,284',
     created: '12 days ago',
   },
   {
     id: '2',
-    original: 'docs.shrnk.in/getting-started/api',
-    short: 'shrnk.in/Qm3vTz',
+    original: `docs.${DOMAIN_NAME}/getting-started/api`,
+    code: 'Qm3vTz',
     clicks: '842',
     created: '8 days ago',
   },
   {
     id: '3',
     original: 'notion.so/team/q3-launch-checklist',
-    short: 'shrnk.in/kb91Rd',
+    code: 'kb91Rd',
     clicks: '417',
     created: '5 days ago',
   },
   {
     id: '4',
     original: 'youtube.com/watch?v=dQw4w9WgXcQ',
-    short: 'shrnk.in/9pLmXe',
+    code: '9pLmXe',
     clicks: '96',
     created: '2 days ago',
   },
   {
     id: '5',
-    original: 'figma.com/@raj/design-system',
-    short: 'shrnk.in/5bK9qL',
+    original: 'figma.com/@johndoe/design-system',
+    code: '5bK9qL',
     clicks: '64',
     created: '1 day ago',
   },
@@ -42,7 +43,7 @@ export function DashboardPreview() {
   const [copiedId, setCopiedId] = useState(null);
 
   const handleCopy = (link) => {
-    navigator.clipboard.writeText(`https://${link.short}`);
+    navigator.clipboard.writeText(getFullShortUrl(link.code));
     setCopiedId(link.id);
     setTimeout(() => {
       setCopiedId(null);
@@ -138,7 +139,7 @@ export function DashboardPreview() {
                     {/* Short URL Badge */}
                     <td className="cell-short">
                       <span className="short-badge">
-                        {link.short}
+                        {getShortUrlDisplay(link.code)}
                       </span>
                     </td>
 

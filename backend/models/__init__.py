@@ -1,10 +1,6 @@
-"""
-SHRNK Models Module
-Re-exports User, URL, and Click models from the modular models directory.
-"""
+from backend.database import Base
 from backend.models.user import User
 from backend.models.url import URL
 from backend.models.click import Click
-from backend.database import Base
 
 __all__ = ["Base", "User", "URL", "Click"]

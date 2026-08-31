@@ -59,9 +59,10 @@ env.bak/
 venv.bak/
 
 # Database files
+shrnk.db
+*.db
 *.sqlite
 *.sqlite3
-*.db
 
 # Node / Frontend (if applicable)
 node_modules/

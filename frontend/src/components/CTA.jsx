@@ -1,9 +1,15 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
-export function CTA({ onStartClick }) {
-  const handleStartShrinking = () => {
-    if (onStartClick) {
+export function CTA({ onStartClick, onNavigateDashboard }) {
+  const { isAuthenticated } = useAuth();
+
+  const handleAction = () => {
+    if (isAuthenticated) {
+      if (onNavigateDashboard) {
+        onNavigateDashboard('overview');
+      }
+    } else if (onStartClick) {
       onStartClick();
     } else {
       const heroInput = document.querySelector('.shortener-input');
@@ -28,10 +34,10 @@ export function CTA({ onStartClick }) {
 
           <button
             type="button"
-            onClick={handleStartShrinking}
+            onClick={handleAction}
             className="btn-cta-action"
           >
-            <span>START SHRINKING</span>
+            <span>{isAuthenticated ? 'GO TO DASHBOARD' : 'START SHRINKING'}</span>
             <span className="cta-arrow">→</span>
           </button>
         </div>

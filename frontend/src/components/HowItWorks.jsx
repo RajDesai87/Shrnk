@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { getShortUrlDisplay, getFullShortUrl } from '../config';
+
+const sampleCode = 'a7Kx92';
 
 const stepsData = [
   {
@@ -20,10 +23,9 @@ const stepsData = [
 
 export function HowItWorks() {
   const [copied, setCopied] = useState(false);
-  const sampleShort = 'shrnk.in/a7Kx92';
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(`https://${sampleShort}`);
+    navigator.clipboard.writeText(getFullShortUrl(sampleCode));
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -74,7 +76,7 @@ export function HowItWorks() {
               title="Click to copy"
             >
               <span className="transformation-short-pill">
-                {copied ? 'COPIED!' : sampleShort}
+                {copied ? 'COPIED!' : getShortUrlDisplay(sampleCode)}
               </span>
             </div>
           </div>

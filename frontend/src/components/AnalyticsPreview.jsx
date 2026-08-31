@@ -1,4 +1,5 @@
 import React from 'react';
+import { getShortUrlDisplay } from '../config';
 
 const analyticsMetrics = [
   { label: 'TOTAL CLICKS', value: '1,284' },
@@ -36,7 +37,7 @@ export function AnalyticsPreview() {
           {/* Card 1: Key Metrics List */}
           <div className="analytics-card metrics-card">
             <div className="analytics-card-header">
-              <span className="analytics-link-tag">SHRNK.IN/A7KX92</span>
+              <span className="analytics-link-tag">{getShortUrlDisplay('a7Kx92').toUpperCase()}</span>
             </div>
 
             <div className="metrics-list">
