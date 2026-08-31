@@ -1540,6 +1540,25 @@
   line-height: 1.35;
 }
 
+.auth-error-banner {
+  background-color: #FFEAEA;
+  border: 2px solid #E11D48;
+  color: #0D0D0D;
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  box-shadow: 3px 3px 0px #000;
+  text-align: center;
+}
+
+.auth-success-state {
+  text-align: center;
+  padding: 24px 10px;
+}
+
+
 /* ==========================================================================
    11. Responsive Design & Breakpoints
    ========================================================================== */
