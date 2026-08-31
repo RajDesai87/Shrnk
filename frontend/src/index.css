@@ -1,0 +1,93 @@
+/* ==========================================================================
+   SHRNK Global Styles & CSS Reset
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --bg-canvas: #ECECE4;
+  --bg-canvas-light: #F4F4EC;
+  --bg-card: #FFFFFF;
+  --bg-highlight: #B5FF14;
+  --bg-highlight-hover: #A2E810;
+  
+  --text-primary: #0D0D0D;
+  --text-secondary: #555550;
+  --text-muted: #777770;
+  
+  --border-color: #0D0D0D;
+  --border-width: 2px;
+  --border-thick: 2.5px;
+  
+  --grid-line-color: #D6D6C8;
+  
+  /* Shadows */
+  --shadow-sm: 2px 2px 0px #0D0D0D;
+  --shadow-md: 4px 4px 0px #0D0D0D;
+  --shadow-lg: 6px 6px 0px #0D0D0D;
+  --shadow-xl: 8px 8px 0px #0D0D0D;
+  
+  /* Typography */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Mono', 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Common Typography & Helper Classes */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+::selection {
+  background-color: var(--bg-highlight);
+  color: var(--text-primary);
+}
