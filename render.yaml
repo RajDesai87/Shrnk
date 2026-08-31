@@ -22,11 +22,12 @@ services:
   # ============================================================================
   # 2. Frontend Static Site (React + Vite)
   # ============================================================================
-  - type: staticSite
+  - type: web
     name: shrnk-frontend
+    runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
-    publishDir: dist
+    staticPublishPath: dist
     routes:
       - type: rewrite
         source: /*
