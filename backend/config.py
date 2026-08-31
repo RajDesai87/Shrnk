@@ -28,11 +28,6 @@ class Settings:
     
     # App URLs - Dynamic Base URL used at runtime to construct public short URLs
     BASE_URL: str = os.getenv("BASE_URL", os.getenv("VITE_BASE_URL", "http://localhost:8000"))
-    
-    # Google OAuth (optional / future)
-    GOOGLE_CLIENT_ID: str = os.getenv("GOOGLE_CLIENT_ID", "")
-    GOOGLE_CLIENT_SECRET: str = os.getenv("GOOGLE_CLIENT_SECRET", "")
-    GOOGLE_REDIRECT_URI: str = os.getenv("GOOGLE_REDIRECT_URI", "http://localhost:5173")
 
 
 settings = Settings()

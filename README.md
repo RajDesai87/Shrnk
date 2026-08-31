@@ -247,9 +247,6 @@ Configure the following variables in your `.env` file located in the root direct
 | `ACCESS_TOKEN_EXPIRE_MINUTES` | Integer | `1440` | Token expiration lifetime in minutes (default: 24 hours). |
 | `VITE_API_BASE_URL` | String | `http://localhost:8000` | Backend API URL accessed by the React frontend. |
 | `VITE_BASE_URL` | String | `http://localhost:8000` | Base URL used by the frontend for display and clipboard copy. |
-| `GOOGLE_CLIENT_ID` | String | `""` | Optional Google OAuth Client ID (reserved for future integration). |
-| `GOOGLE_CLIENT_SECRET` | String | `""` | Optional Google OAuth Client Secret. |
-| `GOOGLE_REDIRECT_URI` | String | `http://localhost:5173` | Google OAuth callback redirect URI. |
 
 ---
 
