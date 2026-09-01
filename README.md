@@ -320,19 +320,7 @@ Configure the following variables in your `.env` file located in the root direct
 
 ## Deployment (Render)
 
-SHRNK includes a ready-to-use [`render.yaml`](render.yaml) blueprint to deploy both the backend API and frontend static site seamlessly.
-
-### Method 1: Render Blueprint (Recommended)
-1. Push your repository to **GitHub**.
-2. Log into [Render Dashboard](https://dashboard.render.com/) and click **New +** $\rightarrow$ **Blueprint**.
-3. Connect your repository. Render will automatically detect `render.yaml` and configure:
-   * **`shrnk-backend`** (Python Web Service)
-   * **`shrnk-frontend`** (Static Site with SPA rewrite rules)
-4. Under Environment Variables for `shrnk-backend`, set `BASE_URL` to your deployed backend URL (e.g. `https://shrnk-backend.onrender.com`).
-5. Under Environment Variables for `shrnk-frontend`, set `VITE_API_BASE_URL` and `VITE_BASE_URL` to your backend URL.
-6. Click **Apply**.
-
-### Method 2: Manual Setup on Render
+### Method : Manual Setup on Render
 
 #### 1. Deploy the Backend (Web Service)
 * **Runtime**: Python 3
